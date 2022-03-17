@@ -59,6 +59,13 @@ import RuoYiGit from '@/components/RuoYi/Git'
 import clearCache from '@/components/RuoYi/clearCache'
 import RuoYiDoc from '@/components/RuoYi/Doc'
 import TopNav from '@/components/TopNav'
+import { Authorizer } from "@authorizerdev/authorizer-js"
+
+const authorizerRef = new Authorizer({
+	authorizerURL: `http://localhost:8080`,
+	redirectURL: window.location.origin,
+  clientID: "",
+});
 
 export default {
   components: {
@@ -99,6 +106,7 @@ export default {
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },
+      
     async logout() {
       this.$confirm('确定注销并退出系统吗？', '提示', {
         confirmButtonText: '确定',
@@ -109,6 +117,8 @@ export default {
           location.reload()
         })
       })
+
+      await authorizerRef.logout();
     }
   }
 }

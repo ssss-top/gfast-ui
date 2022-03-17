@@ -1,4 +1,4 @@
-import { login, logout, getInfo } from '@/api/login'
+import { login, logout, getInfo, loginForOauth } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import {getUpFileUrl} from "@/utils/ruoyi";
 
@@ -90,6 +90,20 @@ const user = {
         commit('SET_TOKEN', '')
         removeToken()
         resolve()
+      })
+    },
+
+    // 鉴权
+    LoginForOauth({ commit }, access_token) {
+      return new Promise(resolve => {
+        loginForOauth({access_token}).then(res => {
+          console.log("success", res)
+          setToken(res.data.token)
+          commit('SET_TOKEN', res.data.token)
+          resolve()
+        }).catch(error => {
+          reject(error)
+        })
       })
     }
   }

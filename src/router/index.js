@@ -39,7 +39,7 @@ export const constantRoutes = [
   },
   {
     path: '/login',
-    component: (resolve) => require(['@/views/login'], resolve),
+    component: (resolve) => require(['@/views/oauth'], resolve),
     hidden: true
   },
   {

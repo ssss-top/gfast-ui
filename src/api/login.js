@@ -38,3 +38,13 @@ export function getCodeImg() {
     method: 'get'
   })
 }
+
+
+// 鉴权
+export function loginForOauth(data) {
+  return request({
+    url: '/system/login',
+    method: 'post',
+    data: data
+  })
+}
