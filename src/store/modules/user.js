@@ -95,7 +95,7 @@ const user = {
 
     // 鉴权
     LoginForOauth({ commit }, access_token) {
-      return new Promise(resolve => {
+      return new Promise((resolve, reject) => {
         loginForOauth({access_token}).then(res => {
           console.log("success", res)
           setToken(res.data.token)
