@@ -61,8 +61,9 @@ import RuoYiDoc from '@/components/RuoYi/Doc'
 import TopNav from '@/components/TopNav'
 import { Authorizer } from "@authorizerdev/authorizer-js"
 
+console.log('nav', process.env)
 const authorizerRef = new Authorizer({
-	authorizerURL: `http://localhost:8080`,
+	authorizerURL: process.env.VUE_APP_AUTHORIZER_URL,
 	redirectURL: window.location.origin,
   clientID: "",
 });

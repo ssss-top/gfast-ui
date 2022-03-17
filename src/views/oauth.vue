@@ -6,7 +6,7 @@
 import { Authorizer } from "@authorizerdev/authorizer-js"
 
 const authorizerRef = new Authorizer({
-  authorizerURL: `http://localhost:8080`,
+  authorizerURL: process.env.VUE_APP_AUTHORIZER_URL,
   redirectURL: window.location.origin,
   clientID: "",
 });
