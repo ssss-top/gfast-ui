@@ -8,7 +8,7 @@ import { Authorizer } from "@authorizerdev/authorizer-js"
 const authorizerRef = new Authorizer({
   authorizerURL: process.env.VUE_APP_AUTHORIZER_URL,
   redirectURL: window.location.origin,
-  clientID: "",
+  clientID: process.env.VUE_APP_AUTHORIZER_CLIENT_ID,
 });
 
 export default {
@@ -20,14 +20,6 @@ export default {
     },
     created() {
         this.onLoad();
-  },
-  watch: {
-    $route: {
-      handler: function(route) {
-        this.redirect = route.query && route.query.redirect;
-      },
-      immediate: true
-    }
   },
   methods: {
     async onLoad() {
@@ -41,8 +33,7 @@ export default {
             .catch(() => {
               this.loading = false;
             });
-        } 
-
+        }
 		}
   }
 }
