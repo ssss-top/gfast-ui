@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'gfast管理系统',
+  title: '',
 
   /**
    * 是否系统布局配置

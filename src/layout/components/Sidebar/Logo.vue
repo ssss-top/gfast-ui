@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      title: 'gfast2.0管理系统',
+      title: '量化',
       logo: logoImg
     }
   }
@@ -57,10 +57,10 @@ export default {
     width: 100%;
 
     & .sidebar-logo {
-      width: 32px;
-      height: 32px;
+      /*width: 35px;*/
+      /*height: 35px;*/
       vertical-align: middle;
-      margin-right: 12px;
+      /*margin-right: 12px;*/
     }
 
     & .sidebar-title {
