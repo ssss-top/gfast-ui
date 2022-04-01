@@ -59,9 +59,9 @@ export const constantRoutes = [
     children: [
       {
         path: 'index',
-        component: (resolve) => require(['@/views/index'], resolve),
-        name: '首页',
-        meta: { title: '首页', icon: 'dashboard', noCache: true, affix: true }
+        component: (resolve) => require(['@/views/app/balance/index'], resolve),
+        name: '账户总览',
+        meta: { title: '账户总览', icon: 'dashboard', noCache: true, affix: true }
       }
     ]
   },
@@ -131,6 +131,7 @@ export const constantRoutes = [
       }
     ]
   },
+  
 ]
 
 export default new Router({
